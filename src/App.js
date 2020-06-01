@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <CaixaEdicaoTexto enviar={enviarTarefaTodo} />
-      <ListaTarefas tarefas={tarefasTodo} titulo="TO DO" />
+      <ListaTarefas tarefas={tarefasTodo} titulo="TODO" />
       <h1>DOING</h1>
       <ListaTarefas />
       <h1>DONE</h1>

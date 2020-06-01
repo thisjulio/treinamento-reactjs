@@ -5,7 +5,13 @@ import App, { ListaTarefas, CaixaEdicaoTexto } from './App';
 test('APP deve exibir lista de TODO, DOING e DONE', () => {
   const { getByText } = render(<App />);
 
-  
+  const ElementTODOListTitle = getByText(/TODO/, {selector: "h1"});
+  const ElementDOINGListTitle = getByText(/DOING/, {selector: "h1"});
+  const ElementDONEListTitle = getByText(/DONE/, {selector: "h1"});
+
+  expect(ElementTODOListTitle).toBeInTheDocument();
+  expect(ElementDOINGListTitle).toBeInTheDocument();
+  expect(ElementDONEListTitle).toBeInTheDocument();
 });
 
 test('Lista de tarefa deve exibir ul com as tarefas em li', () => { 
@@ -17,7 +23,6 @@ test('Lista de tarefa deve exibir ul com as tarefas em li', () => {
   expect(Element).toBeInTheDocument();
   expect(TaskItem).toBeInTheDocument();
 });
-
 
 test('Caixa de edição deve exibir uma nova tarefa', () => { 
   const MockComponent = () => {

@@ -32,7 +32,7 @@ function App() {
   const [tarefasTodo, setTarefasTodo] = useState(["Teste 1"]);
 
   function enviarTarefaTodo(tituloTarefa) {
-    setTarefasTodo([...tarefasTodo, tituloTarefa]);
+    setTarefasTodo(prev => [...prev, tituloTarefa]);
   }
 
   return (

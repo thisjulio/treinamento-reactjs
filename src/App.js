@@ -32,7 +32,7 @@ function App() {
   return (
     <div className="App">
       <CaixaEdicaoTexto />
-      <ListaTarefas tarefas={["Teste 1"]} titulo={} />
+      <ListaTarefas tarefas={["Teste 1"]} titulo="TO DO" />
       <h1>DOING</h1>
       <ListaTarefas />
       <h1>DONE</h1>

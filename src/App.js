@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -29,10 +29,16 @@ export const ListaTarefas = ({tarefas = [], titulo}) => <>
 
 
 function App() {
+  const [tarefasTodo, setTarefasTodo] = useState(["Teste 1"]);
+
+  function enviarTarefaTodo(tituloTarefa) {
+    setTarefasTodo([...tarefasTodo, tituloTarefa]);
+  }
+
   return (
     <div className="App">
-      <CaixaEdicaoTexto />
-      <ListaTarefas tarefas={["Teste 1"]} titulo="TO DO" />
+      <CaixaEdicaoTexto enviar={enviarTarefaTodo} />
+      <ListaTarefas tarefas={tarefasTodo} titulo="TO DO" />
       <h1>DOING</h1>
       <ListaTarefas />
       <h1>DONE</h1>
